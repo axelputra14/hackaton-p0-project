@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
+<body onload="loadGameData()">
     <nav>
         <div class="container">
             <div class="nav__left-container">
@@ -128,145 +128,7 @@
     </section>
 
     <section id="best_sellers">
-        <h1>BEST SELLERS</h1>
-        <div class="container best-sellers">
-            <a class="game-card" href="#">
-                <img src="./assets/final_fantasy7_remake.jpg" alt="">
-                <div class="game-title">
-                    <p>Final Fantasy 7 Remake</p>
-                    <div class="platform">
-                        <i class="fa-brands fa-steam"></i>
-                        <i class="fa-brands fa-playstation"></i>
-                    </div>
-                </div>
-                <div class="game-info">
-                    <p class="game-price">$69.99</p>
-                    <p class="game-price">Stock: 99</p>
-                </div>
-                <p class="add-cart">Add to Cart</p>
-            </a>
-
-            <a class="game-card" href="#">
-                <img src="./assets/hogwarts_legacy.jpeg" alt="">
-                <div class="game-title">
-                    <p>Hogwarts Legacy</p>
-                    <div class="platform">
-                        <i class="fa-brands fa-steam"></i>
-                        <i class="fa-brands fa-playstation"></i>
-                        <i class="fa-brands fa-xbox"></i>
-                    </div>
-                </div>
-                <div class="game-info">
-                    <p class="game-price">$59.99</p>
-                    <p class="game-price">Stock: 99</p>
-                </div>
-                <p class="add-cart">Add to Cart</p>  
-            </a>
-
-            <a class="game-card" href="#">
-                <img src="./assets/monsterhunter_world.png" alt="">
-                <div class="game-title">
-                    <p>Monster Hunter World</p>
-                    <div class="platform">
-                        <i class="fa-brands fa-steam"></i>
-                        <i class="fa-brands fa-playstation"></i>
-                        <i class="fa-brands fa-xbox"></i>
-                    </div>
-                </div>
-                <div class="game-info">
-                    <p class="game-price">$14.99</p>
-                    <p class="game-price">Stock: 99</p>
-                </div>
-                <p class="add-cart">Add to Cart</p>
-            </a>
-
-            <a class="game-card" href="#">
-                <img src="./assets/cyberpunk_2077.jpg" alt="">
-                <div class="game-title">
-                    <p>Cyberpunk 2077</p>
-                    <div class="platform">
-                        <i class="fa-brands fa-steam"></i>
-                        <i class="fa-brands fa-playstation"></i>
-                        <i class="fa-brands fa-xbox"></i>
-                    </div>
-                </div>
-                <div class="game-info">
-                    <p class="game-price">$59.99</p>
-                    <p class="game-price">Stock: 99</p>
-                </div>
-                <p class="add-cart">Add to Cart</p>
-            </a>
-        </div>
-
-        <div class="container best-sellers">
-            <a class="game-card" href="#">
-                <img src="./assets/terraria.jpg" alt="">
-                <div class="game-title">
-                    <p>Terraria</p>
-                    <div class="platform">
-                        <i class="fa-brands fa-steam"></i>
-                        <i class="fa-brands fa-playstation"></i>
-                        <i class="fa-brands fa-xbox"></i>
-                    </div>
-                </div>
-                <div class="game-info">
-                    <p class="game-price">$9.99</p>
-                    <p class="game-price">Stock: 99</p>
-                </div>
-                <p class="add-cart">Add to Cart</p>
-            </a>
-
-            <a class="game-card" href="#">
-                <img src="./assets/red_dead_redemption_2.jpeg" alt="">
-                <div class="game-title">
-                    <p>Red Dead Redemption 2</p>
-                    <div class="platform">
-                        <i class="fa-brands fa-steam"></i>
-                        <i class="fa-brands fa-playstation"></i>
-                        <i class="fa-brands fa-xbox"></i>
-                    </div>
-                </div>
-                <div class="game-info">
-                    <p class="game-price">$19.79</p>
-                    <p class="game-price">Stock: 99</p>
-                </div>
-                <p class="add-cart">Add to Cart</p>  
-            </a>
-
-            <a class="game-card" href="#">
-                <img src="./assets/forza_horizon_5.png" alt="">
-                <div class="game-title">
-                    <p>Forza Horizon 5</p>
-                    <div class="platform">
-                        <i class="fa-brands fa-steam"></i>
-                        <i class="fa-brands fa-playstation"></i>
-                        <i class="fa-brands fa-xbox"></i>
-                    </div>
-                </div>
-                <div class="game-info">
-                    <p class="game-price">$39.99</p>
-                    <p class="game-price">Stock: 99</p>
-                </div>
-                <p class="add-cart">Add to Cart</p>
-            </a>
-
-            <a class="game-card" href="#">
-                <img src="./assets/cities_skyline.jpg" alt="">
-                <div class="game-title">
-                    <p>Cities Skylines</p>
-                    <div class="platform">
-                        <i class="fa-brands fa-steam"></i>
-                        <i class="fa-brands fa-playstation"></i>
-                        <i class="fa-brands fa-xbox"></i>
-                    </div>
-                </div>
-                <div class="game-info">
-                    <p class="game-price">$29.99</p>
-                    <p class="game-price">Stock: 99</p>
-                </div>
-                <p class="add-cart">Add to Cart</p>
-            </a>
-        </div>
+        
     </section>
 
     <section id="shopping_cart">
