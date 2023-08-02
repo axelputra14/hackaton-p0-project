@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OwO Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav__left-container">
+                <span class="logo">OWO STORE</span>
+                <form action="" class="search-bar">
+                    <input type="text" placeholder="Search any game..." name="">
+                    <button type="submit">
+                        <i class='bx bx-search-alt img' ></i>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="nav__right-container">
+                <i class='bx bx-cart nav-icons'></i>
+                <a href="" class="signin-btn"><i class='bx bx-user-circle'></i>Sign in</a>
+                <i class='bx bx-cog nav-icons' ></i>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+
+        <h1>GAME NEWS</h1>
+
+        <div class="slideshow-container">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
+            <div>
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/final-fantasy-14s-next-expansion-has-a-name-and-a-new-job/">
+                        <img src="./assets/news_1.png">
+                        <div class="content text">
+                        <p>Final Fantasy 14's next expansion has a name and a new job</p>
+                        </div>
+                    </a>
+                </div>
+            
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/path-of-exile-devs-feel-very-bad-for-their-diablo-4-counterparts-but-thats-live-service-for-you-and-why-theyre-going-more-in-the-elden-ring-sort-of-direction/">
+                        <img src="./assets/news_2.png">
+                        <div class="content text">
+                        <p>Path of Exile devs 'feel very bad' for their Diablo 4 counterparts, but that's live service for you and why they're 'going more in the Elden Ring sort of direction'</p>
+                        </div>
+                    </a>
+                </div>
+            
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/diablo-4-fans-finally-get-the-news-weve-been-waiting-for-horse-buffs/">
+                        <img src="./assets/news_3.png">
+                        <div class="content text">
+                        <p>Diablo 4 fans finally got the news we've been waiting for: horse buffs</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/wo-long-dev-says-sorry-about-the-crappy-pc-version-but-the-thing-is-you-see-there-are-lots-of-types-of-pc/">
+                        <img src="./assets/news_4.png">
+                        <div class="content text">
+                        <p>Wo Long dev says sorry about the crappy PC version but the thing is, you see, there are lots of types of PC</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/a-bug-in-remnant-2-is-letting-you-literally-dodge-the-games-respec-cost/">
+                        <img src="./assets/news_5.png">
+                        <div class="content text">
+                        <p>A bug in Remnant 2 is letting you literally dodge the game's respec cost</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/cities-skylines-2-map-size/">
+                        <img src="./assets/news_6.png">
+                        <div class="content text">
+                        <p>Cities: Skylines 2 is 'roughly 5 times bigger' than the original</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/some-of-the-tekken-8-roster-has-leaked-thanks-to-cheat-engine/">
+                        <img src="./assets/news_7.png">
+                        <div class="content text">
+                        <p>Some of the Tekken 8 roster has leaked thanks to Cheat Engine</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/infection-free-zone-will-let-you-reclaim-your-own-town-after-the-zombie-apocalypse/">
+                        <img src="./assets/news_8.png">
+                        <div class="content text">
+                        <p>Infection Free Zone will let you reclaim your own town after the zombie apocalypse</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    <br>
+    
+    
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+        <span class="dot" onclick="currentSlide(8)"></span>
+    </div>
+    </section>
+
+    <section>
+        <h1>BEST SELLERS</h1>
+        <div class="container best-sellers">
+            <a class="game-card" href="#">
+                <img src="./assets/final_fantasy7_remake.jpg" alt="">
+                <div class="game-title">
+                    <p>Final Fantasy 7 Remake</p>
+                    <div class="platform">
+                        <i class="fa-brands fa-steam"></i>
+                        <i class="fa-brands fa-playstation"></i>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <p class="game-price">$69.99</p>
+                    <p class="game-price">Stock: 99</p>
+                </div>
+                <p class="add-cart">Add to Cart</p>
+            </a>
+
+            <a class="game-card" href="#">
+                <img src="./assets/hogwarts_legacy.jpeg" alt="">
+                <div class="game-title">
+                    <p>Hogwarts Legacy</p>
+                    <div class="platform">
+                        <i class="fa-brands fa-steam"></i>
+                        <i class="fa-brands fa-playstation"></i>
+                        <i class="fa-brands fa-xbox"></i>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <p class="game-price">$59.99</p>
+                    <p class="game-price">Stock: 99</p>
+                </div>
+                <p class="add-cart">Add to Cart</p>  
+            </a>
+
+            <a class="game-card" href="#">
+                <img src="./assets/monsterhunter_world.png" alt="">
+                <div class="game-title">
+                    <p>Monster Hunter World</p>
+                    <div class="platform">
+                        <i class="fa-brands fa-steam"></i>
+                        <i class="fa-brands fa-playstation"></i>
+                        <i class="fa-brands fa-xbox"></i>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <p class="game-price">$14.99</p>
+                    <p class="game-price">Stock: 99</p>
+                </div>
+                <p class="add-cart">Add to Cart</p>
+            </a>
+
+            <a class="game-card" href="#">
+                <img src="./assets/cyberpunk_2077.jpg" alt="">
+                <div class="game-title">
+                    <p>Cyberpunk 2077</p>
+                    <div class="platform">
+                        <i class="fa-brands fa-steam"></i>
+                        <i class="fa-brands fa-playstation"></i>
+                        <i class="fa-brands fa-xbox"></i>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <p class="game-price">$59.99</p>
+                    <p class="game-price">Stock: 99</p>
+                </div>
+                <p class="add-cart">Add to Cart</p>
+            </a>
+        </div>
+
+        <div class="container best-sellers">
+            <a class="game-card" href="#">
+                <img src="./assets/terraria.jpg" alt="">
+                <div class="game-title">
+                    <p>Terraria</p>
+                    <div class="platform">
+                        <i class="fa-brands fa-steam"></i>
+                        <i class="fa-brands fa-playstation"></i>
+                        <i class="fa-brands fa-xbox"></i>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <p class="game-price">$9.99</p>
+                    <p class="game-price">Stock: 99</p>
+                </div>
+                <p class="add-cart">Add to Cart</p>
+            </a>
+
+            <a class="game-card" href="#">
+                <img src="./assets/red_dead_redemption_2.jpeg" alt="">
+                <div class="game-title">
+                    <p>Red Dead Redemption 2</p>
+                    <div class="platform">
+                        <i class="fa-brands fa-steam"></i>
+                        <i class="fa-brands fa-playstation"></i>
+                        <i class="fa-brands fa-xbox"></i>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <p class="game-price">$19.79</p>
+                    <p class="game-price">Stock: 99</p>
+                </div>
+                <p class="add-cart">Add to Cart</p>  
+            </a>
+
+            <a class="game-card" href="#">
+                <img src="./assets/forza_horizon_5.png" alt="">
+                <div class="game-title">
+                    <p>Forza Horizon 5</p>
+                    <div class="platform">
+                        <i class="fa-brands fa-steam"></i>
+                        <i class="fa-brands fa-playstation"></i>
+                        <i class="fa-brands fa-xbox"></i>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <p class="game-price">$39.99</p>
+                    <p class="game-price">Stock: 99</p>
+                </div>
+                <p class="add-cart">Add to Cart</p>
+            </a>
+
+            <a class="game-card" href="#">
+                <img src="./assets/cities_skyline.jpg" alt="">
+                <div class="game-title">
+                    <p>Cities Skylines</p>
+                    <div class="platform">
+                        <i class="fa-brands fa-steam"></i>
+                        <i class="fa-brands fa-playstation"></i>
+                        <i class="fa-brands fa-xbox"></i>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <p class="game-price">$29.99</p>
+                    <p class="game-price">Stock: 99</p>
+                </div>
+                <p class="add-cart">Add to Cart</p>
+            </a>
+        </div>
+    </section>
+
+    <section>
+        <h1>SHOPPING CART</h1>
+        <div class="cart-container">
+            <button class="remove">Remove all</button>
+            <div class="cart-infos">               
+                <div class="inner-container">
+                    <div class="item-infos">
+                        <img src="./assets/final_fantasy7_remake.jpg" alt="">
+                        <div class="item-infos-container">
+                            <h2>Final Fantasy 7 Remake</h2>
+                            <p>$ 69.99</p>
+                            <p>In Stock</p>
+                        </div>
+                    </div>
+        
+                    <div class="quantity-infos">
+                        <i class='bx bx-minus' ></i>
+                        <p>2</p>
+                        <i class='bx bx-plus' ></i>
+                    </div>
+        
+                    <div class="subtotal-infos">
+                        <p>$ 139.98</p>
+                        <button class="remove">Remove</button>
+                    </div>
+                </div>
+
+                <div class="inner-container">
+                    <div class="item-infos">
+                        <img src="./assets/cyberpunk_2077.jpg" alt="">
+                        <div class="item-infos-container">
+                            <h2>Cyberpunk 2077</h2>
+                            <p>$ 59.99</p>
+                            <p>In Stock</p>
+                        </div>
+                    </div>
+        
+                    <div class="quantity-infos">
+                        <i class='bx bx-minus' ></i>
+                        <p>1</p>
+                        <i class='bx bx-plus' ></i>
+                    </div>
+        
+                    <div class="subtotal-infos">
+                        <p>$ 59.99</p>
+                        <button class="remove">Remove</button>
+                    </div>
+                </div>
+
+
+                <div class="checkout-container">
+                    <div class="checkout-wrapper">
+                        <div class="checkout-left">
+                            <p>Sub-Total</p>
+                            <p class="total-items">2 items</p>
+                        </div>
+                        
+                        <p>$ 199.97</p>
+                    </div>
+                    <button class="checkout-btn">Checkout</button>
+                </div>
+            </div>
+            
+        </div>
+
+    </section>
+
+    <section>
+        <div class="newsletter">
+            <p>Sign up to our newsletter for game news, discounts and exclusive offers.</p>
+            <span>You can unsubscribe any time through our emails.</span>
+            <div class="newsletter-container">
+                <input type="text" placeholder="Email...">
+                <button type="submit">Subscribe Now</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+
+        <h1>OwO STORE</h1>
+
+        <ul class="footer-nav">
+            <li>
+                <a href="">Abous Us</a>
+            </li>
+            <span>•</span>
+            <li>
+                <a href="">Terms and Conditions</a>
+            </li>
+            <span>•</span>
+            <li>
+                <a href="">Privacy Policy</a>
+            </li>
+            <span>•</span>
+            <li>
+                <a href="">Transaction Services Agreement</a>
+            </li>
+            <span>•</span>
+            <li>
+                <a href="">Customer Support</a>
+            </li>
+        </ul>
+
+        <div class="community">
+            <p>Join our community</p>
+            <div>
+                <i class='bx bxl-facebook-circle' ></i>
+                <i class='bx bxl-twitter' ></i>
+                <i class='bx bxl-instagram-alt' ></i>
+                <i class='bx bxl-youtube' ></i>
+                <i class='bx bxl-discord-alt' ></i>
+            </div>
+        </div>
+
+        <div class="footer-text">
+            <p>© 2023 OwO Store. All Rights Reserved</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, rerum! Ipsam, corrupti? Dolore, fuga provident! Labore ut voluptas nulla officiis corporis deserunt!</p>
+        </div>
+        
+    </footer>
+   
+    <script src="./js/script.js"></script>
+    <script src="https://kit.fontawesome.com/5973848f33.js" crossorigin="anonymous"></script>
+</body>
+</html>
