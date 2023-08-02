@@ -117,78 +117,99 @@ function loadGameData(){
   let row = 2;
   let rowSplit = Math.ceil((data.length) / row);
 
-    for(let i = 1; i <= row; i++){
+
+    for(let i = 0; i < row; i++){
       let divSeller = document.createElement("div")
       divSeller.setAttribute("class", "container")
       divSeller.classList.add("best-sellers")
 
-      for(let a = 0; a < (data.length / 2); a++){
+      if(i == 0){
+        for(let a = 0; a < (data.length / 2); a++){
           
-        let game = data[a]
-        let card =  document.createElement('a')
-        card.setAttribute("class", "game-card")
-  
-        let gamePic = document.createElement('img')
-        gamePic.setAttribute("src", game.thumbnail)
-      
-        let div1 = document.createElement('div')
-        div1.setAttribute("class", "game-title")
-      
-        let p1 = document.createElement("p")
-        p1.innerHTML = game['name']
-        // let div2 = document.createElement('div')
-        // div2.setAttribute("class", "platform")  
-      
-        let div3 = document.createElement('div')
-        div3.setAttribute("class", "game-info")
-        let p2 = document.createElement("p")
-        p2.innerHTML = game['price']
-        p2.setAttribute("class", "game-price")
-        let p3 = document.createElement("p")
-        p3.innerHTML = `Stock: ${game.stock}`
-        p3.setAttribute("class", "game-price")
-      
-        let p4 = document.createElement("p")
-        p4.setAttribute("class", "add-cart")
-        p4.innerHTML = "Add to Cart"
-      
-        div1.appendChild(p1)
-        div3.appendChild(p2)
-        div3.appendChild(p3)
-        card.appendChild(gamePic)
-        card.appendChild(div1)
-        card.appendChild(div3)
-        card.appendChild(p4)
-        divSeller.appendChild(card)
-        gameList.appendChild(divSeller)        
-
-
-        // if((a) % rowSplit == 0){
-        //   console.log(a);
-        //   //gameList.appendChild(divSeller)
-        //   //gameList.appendChild(card)
-        //   let divSellerSplit = document.createElement("div")
-        //   divSellerSplit.setAttribute("class", "container")
-        //   divSellerSplit.classList.add("best-sellers")
-        //   gameList.appendChild(divSellerSplit)
-        // }
-        // else if(data[a+1] == undefined){
-        //   //gameList.appendChild(divSellerSplit)
-        // }
-        
-
-        // if(a % 4 === 0){
-        //   let divSeller = document.createElement("div")
-        //   divSeller.setAttribute("class", "container")
-        //   divSeller.classList.add("best-sellers")
-        //   gameList.appendChild(divSeller)
-        //   divSeller.appendChild(card)
-        // }
-        // else{
-        //   gameList.appendChild(card)
-        // }
+          let game = data[a]
+          let card =  document.createElement('a')
+          card.setAttribute("class", "game-card")
     
+          let gamePic = document.createElement('img')
+          gamePic.setAttribute("src", game.thumbnail)
+        
+          let div1 = document.createElement('div')
+          div1.setAttribute("class", "game-title")
+        
+          let p1 = document.createElement("p")
+          p1.innerHTML = game['name']
+          // let div2 = document.createElement('div')
+          // div2.setAttribute("class", "platform")  
+        
+          let div3 = document.createElement('div')
+          div3.setAttribute("class", "game-info")
+          let p2 = document.createElement("p")
+          p2.innerHTML = game['price']
+          p2.setAttribute("class", "game-price")
+          let p3 = document.createElement("p")
+          p3.innerHTML = `Stock: ${game.stock}`
+          p3.setAttribute("class", "game-price")
+        
+          let p4 = document.createElement("p")
+          p4.setAttribute("class", "add-cart")
+          p4.innerHTML = "Add to Cart"
+        
+          div1.appendChild(p1)
+          div3.appendChild(p2)
+          div3.appendChild(p3)
+          card.appendChild(gamePic)
+          card.appendChild(div1)
+          card.appendChild(div3)
+          card.appendChild(p4)
+          divSeller.appendChild(card)
+          gameList.appendChild(divSeller)        
+  
+        }
       }
+      else if(i == 1){
+        for(let a = 4; a < data.length; a++){
+          
+          let game = data[a]
+          let card =  document.createElement('a')
+          card.setAttribute("class", "game-card")
+    
+          let gamePic = document.createElement('img')
+          gamePic.setAttribute("src", game.thumbnail)
+        
+          let div1 = document.createElement('div')
+          div1.setAttribute("class", "game-title")
+        
+          let p1 = document.createElement("p")
+          p1.innerHTML = game['name']
+          // let div2 = document.createElement('div')
+          // div2.setAttribute("class", "platform")  
+        
+          let div3 = document.createElement('div')
+          div3.setAttribute("class", "game-info")
+          let p2 = document.createElement("p")
+          p2.innerHTML = game['price']
+          p2.setAttribute("class", "game-price")
+          let p3 = document.createElement("p")
+          p3.innerHTML = `Stock: ${game.stock}`
+          p3.setAttribute("class", "game-price")
+        
+          let p4 = document.createElement("p")
+          p4.setAttribute("class", "add-cart")
+          p4.innerHTML = "Add to Cart"
+        
+          div1.appendChild(p1)
+          div3.appendChild(p2)
+          div3.appendChild(p3)
+          card.appendChild(gamePic)
+          card.appendChild(div1)
+          card.appendChild(div3)
+          card.appendChild(p4)
+          divSeller.appendChild(card)
+          gameList.appendChild(divSeller)        
+  
+        }
+      }
+
     }
     
 
