@@ -579,3 +579,7 @@ footer h1 {
 .footer-text p {
   margin: 1rem auto;
 }
+
+.invisible{
+  display: none
+}

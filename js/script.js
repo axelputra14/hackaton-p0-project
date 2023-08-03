@@ -60,6 +60,15 @@ let data = [
 
 let shoppingCart = []
 
+
+let noItem = document.getElementById("no-item");
+if(shoppingCart.length == 0){
+  //let noItem = document.getElementById("no-item");
+  noItem.setAttribute("class", "visible")
+}
+
+
+
 // IMAGE CAROUSEL
 
 let slideIndex = 0;
@@ -115,6 +124,9 @@ function autoSlides() {
 }
 
 // END
+
+
+
 document.getElementById("best_sellers").addEventListener("load", loadGameData);
 let gameList = document.getElementById('best_sellers')
 function loadGameData(){
@@ -204,6 +216,8 @@ function addingToCart(id){
 
   stockUpdate[id-1].innerHTML=`Stock: ${data[id-1].stock}`;
 
+  noItem.setAttribute("class", "invisible")
+
   let checkCheckoutContainer = document.getElementsByClassName("checkout-container")
   if(checkCheckoutContainer.length != 0){
     checkCheckoutContainer[0].remove();
@@ -214,9 +228,11 @@ function addingToCart(id){
 
   let divInCon = document.createElement("div");
   divInCon.setAttribute("class", "inner-container");
+  divInCon.setAttribute("game-id", data[id-1].id)
 
   let divItemInfos = document.createElement("div");
   divItemInfos.setAttribute("class", "item-infos")
+
 
   let cartImg = document.createElement("img")
   cartImg.setAttribute("src", data[id-1].thumbnail)
@@ -232,6 +248,8 @@ function addingToCart(id){
 
   let removeBtn = document.createElement("button")
   removeBtn.setAttribute("class", "remove")
+  removeBtn.setAttribute("onclick", `funcRemoveOne(${data[id-1].id})`)
+
   removeBtn.innerHTML = "Remove"
 
   infoContainer.appendChild(cartGameName);
@@ -286,22 +304,81 @@ function addingToCart(id){
   checkoutContainer.appendChild(checkoutBtn)
 
   cartInfos[0].appendChild(checkoutContainer)
+  //checkCartLength()
+  // let textNoItem = document.getElementsByClassName("no-item")
+  // console.log(textNoItem, "ghasgfsdhsdghjsd");
+  // textNoItem[0].remove();
+}
+
+if(shoppingCart.length == 0){
+
+  let cartInfos = document.getElementsByClassName("cart-infos");
+  cartInfos[0].appendChild(noItem)
+}
+
+let btnRemoveOne = document.getElementsByClassName("remove")
+for(let j = 0; j < btnRemoveOne.length; j++){
+  btnRemoveOne[j].addEventListener("click", funcRemoveOne)
+}
+
+function funcRemoveOne(id){
+
+
+  let toRemoveContainer = document.getElementsByClassName("inner-container")
+  
+  for(let m = 0; m < toRemoveContainer.length; m++){
+    console.log(m);
+    toRemoveContainer[m].remove()
+    //console.log(toRemoveContainer[m].getAttribute("game-id"));
+  }
+      //let gameId = toRemoveContainer[id].getAttribute("game-id")
+
+
+      //data[gameId].stock++;
+  
+      //let stockUpdate = document.getElementsByClassName("game-stock");
+  
+      //stockUpdate[gameId-1].innerHTML=`Stock: ${data[gameId-1].stock}`;
+
+    
+
+  //let toRemoveCheckout = document.getElementsByClassName("checkout-container")
+  //for(let n = 0; n < toRemoveCheckout.length; n++){
+    //toRemoveCheckout[n].remove()
+  //}
+
+  //ini di bawah
+  //noItem.setAttribute("class", "visible")
 }
 
 let btnRemoveAll = document.getElementById("remove-all")
 btnRemoveAll.addEventListener("click", funcRemoveAll)
 
 function funcRemoveAll(){
+
   shoppingCart = []
   let toRemoveContainer = document.getElementsByClassName("inner-container")
   
   for(let m = 0; m < toRemoveContainer.length; m++){
+    let gameId = toRemoveContainer[m].getAttribute("game-id")
+    //console.log(gameId[m], "ini game id");
     toRemoveContainer[m].remove()
+    data[gameId-1].stock++;
+
+    let stockUpdate = document.getElementsByClassName("game-stock");
+
+    stockUpdate[gameId-1].innerHTML=`Stock: ${data[gameId-1].stock}`;
   }
 
   let toRemoveCheckout = document.getElementsByClassName("checkout-container")
   for(let n = 0; n < toRemoveCheckout.length; n++){
     toRemoveCheckout[n].remove()
   }
-
+  // let noItem = document.createElement("h2")
+  // noItem.setAttribute("class", "no-item")
+  // noItem.innerHTML = "No item in the cart"
+  // let cartInfos = document.getElementsByClassName("cart-infos");
+  // cartInfos[0].appendChild(noItem)
+  noItem.setAttribute("class", "visible")
 }
+
