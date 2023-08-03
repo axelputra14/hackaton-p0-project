@@ -201,122 +201,138 @@ for (let i = 0 ; i < addCartBtn.length; i++) {
   addCartBtn[i].addEventListener("click", addingToCart);
 }
 
+let btnRemoveAll = document.getElementById("remove-all")
+btnRemoveAll.addEventListener("click", funcRemoveAll)
+
+
 function addingToCart(id){
-  data[id-1].stock--;
-  let inCartObj = {
-    id: data[id-1].id,
-    thumbnail: data[id-1].thumbnail ,
-    name: data[id-1].name,
-    price: data[id-1].price,
-    stock: data[id-1].stock,
+
+  if(data[id-1].stock == 0){
+    alert("Out of stock!")
   }
+  else{
 
-  shoppingCart.push(inCartObj);
-  let stockUpdate = document.getElementsByClassName("game-stock");
-
-  stockUpdate[id-1].innerHTML=`Stock: ${data[id-1].stock}`;
-
-  noItem.setAttribute("class", "invisible")
-
-  let checkCheckoutContainer = document.getElementsByClassName("checkout-container")
-  if(checkCheckoutContainer.length != 0){
-    checkCheckoutContainer[0].remove();
-
-  }
+    data[id-1].stock--;
+    let inCartObj = {
+      id: data[id-1].id,
+      thumbnail: data[id-1].thumbnail ,
+      name: data[id-1].name,
+      price: data[id-1].price,
+      stock: data[id-1].stock,
+    }
   
-  //create elemen gamenya dicart
-
-  let divInCon = document.createElement("div");
-  divInCon.setAttribute("class", "inner-container");
-  divInCon.setAttribute("game-id", data[id-1].id)
-
-  let divItemInfos = document.createElement("div");
-  divItemInfos.setAttribute("class", "item-infos")
-
-
-  let cartImg = document.createElement("img")
-  cartImg.setAttribute("src", data[id-1].thumbnail)
-
-  let infoContainer = document.createElement("div");
-  infoContainer.setAttribute("class", "item-infos-container")
-
-  let cartGameName = document.createElement("h2")
-  cartGameName.innerHTML = data[id-1].name;
-
-  let cartGamePrice = document.createElement("p")
-  cartGamePrice.innerHTML = `$ ${data[id-1].price}`
-
-
-  infoContainer.appendChild(cartGameName);
-  infoContainer.appendChild(cartGamePrice);
-  divItemInfos.appendChild(cartImg);
-  divItemInfos.appendChild(infoContainer);
-  divInCon.appendChild(divItemInfos);
-
-  // ini taruh di paling bawah
-  let cartInfos = document.getElementsByClassName("cart-infos");
-  cartInfos[0].appendChild(divInCon)
-
-  // buat checkout section
-
-  let checkoutContainer = document.createElement("div")
-  checkoutContainer.setAttribute("class", "checkout-container")
-
-  let checkoutWrapper = document.createElement("div")
-  checkoutWrapper.setAttribute("class", "checkout-wrapper")
-
-  let checkoutLeft = document.createElement("div")
-  checkoutLeft.setAttribute("class", "checkout-left")
-
-  let pSubTotal = document.createElement("p")
-  pSubTotal.innerHTML = "Sub-Total"
-
-  let totalItem = document.createElement("p")
-  totalItem.setAttribute("class", "total-items")
-  let subTotal = shoppingCart.length; //ini total item
-
-  totalItem.innerHTML = `${subTotal} items`
-
-  let priceTotal = 0;
-  for(let a = 0; a < shoppingCart.length; a++){
-    priceTotal += (shoppingCart[a]['price'])
+    shoppingCart.push(inCartObj);
+    let stockUpdate = document.getElementsByClassName("game-stock");
+  
+    stockUpdate[id-1].innerHTML=`Stock: ${data[id-1].stock}`;
+  
+    noItem.setAttribute("class", "invisible")
+  
+    let checkCheckoutContainer = document.getElementsByClassName("checkout-container")
+    if(checkCheckoutContainer.length != 0){
+      checkCheckoutContainer[0].remove();
+  
+    }
+    
+    //create elemen gamenya dicart
+  
+    btnRemoveAll.classList.remove("invisible");
+  
+    let divInCon = document.createElement("div");
+    divInCon.setAttribute("class", "inner-container");
+    divInCon.setAttribute("game-id", data[id-1].id)
+  
+    let divItemInfos = document.createElement("div");
+    divItemInfos.setAttribute("class", "item-infos")
+  
+  
+    let cartImg = document.createElement("img")
+    cartImg.setAttribute("src", data[id-1].thumbnail)
+  
+    let infoContainer = document.createElement("div");
+    infoContainer.setAttribute("class", "item-infos-container")
+  
+    let cartGameName = document.createElement("h2")
+    cartGameName.innerHTML = data[id-1].name;
+  
+    let cartGamePrice = document.createElement("p")
+    cartGamePrice.innerHTML = `$ ${data[id-1].price}`
+  
+  
+    infoContainer.appendChild(cartGameName);
+    infoContainer.appendChild(cartGamePrice);
+    divItemInfos.appendChild(cartImg);
+    divItemInfos.appendChild(infoContainer);
+    divInCon.appendChild(divItemInfos);
+  
+    // ini taruh di paling bawah
+    let cartInfos = document.getElementsByClassName("cart-infos");
+    cartInfos[0].appendChild(divInCon)
+  
+    // buat checkout section
+  
+    let checkoutContainer = document.createElement("div")
+    checkoutContainer.setAttribute("class", "checkout-container")
+  
+    let checkoutWrapper = document.createElement("div")
+    checkoutWrapper.setAttribute("class", "checkout-wrapper")
+  
+    let checkoutLeft = document.createElement("div")
+    checkoutLeft.setAttribute("class", "checkout-left")
+  
+    let pSubTotal = document.createElement("p")
+    pSubTotal.innerHTML = "Sub-Total"
+  
+    let totalItem = document.createElement("p")
+    totalItem.setAttribute("class", "total-items")
+    let subTotal = shoppingCart.length; //ini total item
+  
+    totalItem.innerHTML = `${subTotal} items`
+  
+    let priceTotal = 0;
+    for(let a = 0; a < shoppingCart.length; a++){
+      priceTotal += (shoppingCart[a]['price'])
+    }
+  
+    let subTotalPrice = document.createElement("p")
+    subTotalPrice.innerHTML = `$ ${priceTotal.toFixed(2)}`
+  
+    let checkoutBtn = document.createElement("button")
+    checkoutBtn.setAttribute("class", "checkout-btn")
+    checkoutBtn.innerHTML = "Checkout"
+  
+  
+    checkoutLeft.appendChild(pSubTotal)
+    checkoutLeft.appendChild(totalItem)
+    checkoutWrapper.appendChild(checkoutLeft)
+    checkoutWrapper.appendChild(subTotalPrice)
+    checkoutContainer.appendChild(checkoutWrapper)
+    checkoutContainer.appendChild(checkoutBtn)
+  
+    cartInfos[0].appendChild(checkoutContainer)
+    //checkCartLength()
+    // let textNoItem = document.getElementsByClassName("no-item")
+    // console.log(textNoItem, "ghasgfsdhsdghjsd");
+    // textNoItem[0].remove();
   }
 
-  let subTotalPrice = document.createElement("p")
-  subTotalPrice.innerHTML = `$ ${priceTotal.toFixed(2)}`
-
-  let checkoutBtn = document.createElement("button")
-  checkoutBtn.setAttribute("class", "checkout-btn")
-  checkoutBtn.innerHTML = "Checkout"
-
-
-  checkoutLeft.appendChild(pSubTotal)
-  checkoutLeft.appendChild(totalItem)
-  checkoutWrapper.appendChild(checkoutLeft)
-  checkoutWrapper.appendChild(subTotalPrice)
-  checkoutContainer.appendChild(checkoutWrapper)
-  checkoutContainer.appendChild(checkoutBtn)
-
-  cartInfos[0].appendChild(checkoutContainer)
-  //checkCartLength()
-  // let textNoItem = document.getElementsByClassName("no-item")
-  // console.log(textNoItem, "ghasgfsdhsdghjsd");
-  // textNoItem[0].remove();
 }
+
+
 
 if(shoppingCart.length == 0){
 
   let cartInfos = document.getElementsByClassName("cart-infos");
   cartInfos[0].appendChild(noItem)
+  //btnRemoveAll.classList.toggle("invisible");
 }
 
 
 
-let btnRemoveAll = document.getElementById("remove-all")
-btnRemoveAll.addEventListener("click", funcRemoveAll)
+
 
 function funcRemoveAll(){
-
+  
   shoppingCart = []
   let toRemoveContainer = document.getElementsByClassName("inner-container")
   
@@ -341,5 +357,6 @@ function funcRemoveAll(){
   // let cartInfos = document.getElementsByClassName("cart-infos");
   // cartInfos[0].appendChild(noItem)
   noItem.setAttribute("class", "visible")
+  btnRemoveAll.classList.add("invisible");
 }
 
