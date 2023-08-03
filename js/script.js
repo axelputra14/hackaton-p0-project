@@ -246,18 +246,12 @@ function addingToCart(id){
   let cartGamePrice = document.createElement("p")
   cartGamePrice.innerHTML = `$ ${data[id-1].price}`
 
-  let removeBtn = document.createElement("button")
-  removeBtn.setAttribute("class", "remove")
-  removeBtn.setAttribute("onclick", `funcRemoveOne(${data[id-1].id})`)
-
-  removeBtn.innerHTML = "Remove"
 
   infoContainer.appendChild(cartGameName);
   infoContainer.appendChild(cartGamePrice);
   divItemInfos.appendChild(cartImg);
   divItemInfos.appendChild(infoContainer);
   divInCon.appendChild(divItemInfos);
-  divInCon.appendChild(removeBtn);
 
   // ini taruh di paling bawah
   let cartInfos = document.getElementsByClassName("cart-infos");
@@ -316,40 +310,7 @@ if(shoppingCart.length == 0){
   cartInfos[0].appendChild(noItem)
 }
 
-let btnRemoveOne = document.getElementsByClassName("remove")
-for(let j = 0; j < btnRemoveOne.length; j++){
-  btnRemoveOne[j].addEventListener("click", funcRemoveOne)
-}
 
-function funcRemoveOne(id){
-
-
-  let toRemoveContainer = document.getElementsByClassName("inner-container")
-  
-  for(let m = 0; m < toRemoveContainer.length; m++){
-    console.log(m);
-    toRemoveContainer[m].remove()
-    //console.log(toRemoveContainer[m].getAttribute("game-id"));
-  }
-      //let gameId = toRemoveContainer[id].getAttribute("game-id")
-
-
-      //data[gameId].stock++;
-  
-      //let stockUpdate = document.getElementsByClassName("game-stock");
-  
-      //stockUpdate[gameId-1].innerHTML=`Stock: ${data[gameId-1].stock}`;
-
-    
-
-  //let toRemoveCheckout = document.getElementsByClassName("checkout-container")
-  //for(let n = 0; n < toRemoveCheckout.length; n++){
-    //toRemoveCheckout[n].remove()
-  //}
-
-  //ini di bawah
-  //noItem.setAttribute("class", "visible")
-}
 
 let btnRemoveAll = document.getElementById("remove-all")
 btnRemoveAll.addEventListener("click", funcRemoveAll)
