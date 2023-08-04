@@ -580,6 +580,13 @@ footer h1 {
   margin: 1rem auto;
 }
 
-.invisible{
-  display: none
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem auto;
 }
