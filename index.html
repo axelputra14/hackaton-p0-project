@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OwO Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body onload="loadGameData()">
+    <nav>
+        <div class="container">
+            <div class="nav__left-container">
+                <span class="logo">OWO STORE</span>
+                <form action="" class="search-bar">
+                    <input type="text" placeholder="Search any game..." name="">
+                    <button type="submit">
+                        <i class='bx bx-search-alt img' ></i>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="nav__right-container">
+                <a href="#shopping_cart"><i class='bx bx-cart nav-icons'></i></a>
+                <a href="" class="signin-btn"><i class='bx bx-user-circle'></i>Sign in</a>
+                <i class='bx bx-cog nav-icons' ></i>
+            </div>
+        </div>
+    </nav>
+
+    <section id="game_news">
+
+        <h1>GAME NEWS</h1>
+
+        <div class="slideshow-container">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
+            <div>
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/final-fantasy-14s-next-expansion-has-a-name-and-a-new-job/">
+                        <img src="./assets/news_1.png">
+                        <div class="content text">
+                        <p>Final Fantasy 14's next expansion has a name and a new job</p>
+                        </div>
+                    </a>
+                </div>
+            
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/path-of-exile-devs-feel-very-bad-for-their-diablo-4-counterparts-but-thats-live-service-for-you-and-why-theyre-going-more-in-the-elden-ring-sort-of-direction/">
+                        <img src="./assets/news_2.png">
+                        <div class="content text">
+                        <p>Path of Exile devs 'feel very bad' for their Diablo 4 counterparts, but that's live service for you and why they're 'going more in the Elden Ring sort of direction'</p>
+                        </div>
+                    </a>
+                </div>
+            
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/diablo-4-fans-finally-get-the-news-weve-been-waiting-for-horse-buffs/">
+                        <img src="./assets/news_3.png">
+                        <div class="content text">
+                        <p>Diablo 4 fans finally got the news we've been waiting for: horse buffs</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/wo-long-dev-says-sorry-about-the-crappy-pc-version-but-the-thing-is-you-see-there-are-lots-of-types-of-pc/">
+                        <img src="./assets/news_4.png">
+                        <div class="content text">
+                        <p>Wo Long dev says sorry about the crappy PC version but the thing is, you see, there are lots of types of PC</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/a-bug-in-remnant-2-is-letting-you-literally-dodge-the-games-respec-cost/">
+                        <img src="./assets/news_5.png">
+                        <div class="content text">
+                        <p>A bug in Remnant 2 is letting you literally dodge the game's respec cost</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/cities-skylines-2-map-size/">
+                        <img src="./assets/news_6.png">
+                        <div class="content text">
+                        <p>Cities: Skylines 2 is 'roughly 5 times bigger' than the original</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/some-of-the-tekken-8-roster-has-leaked-thanks-to-cheat-engine/">
+                        <img src="./assets/news_7.png">
+                        <div class="content text">
+                        <p>Some of the Tekken 8 roster has leaked thanks to Cheat Engine</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mySlides fade news-container">
+                    <a href="https://www.pcgamer.com/infection-free-zone-will-let-you-reclaim-your-own-town-after-the-zombie-apocalypse/">
+                        <img src="./assets/news_8.png">
+                        <div class="content text">
+                        <p>Infection Free Zone will let you reclaim your own town after the zombie apocalypse</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    <br>
+    
+    
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+        <span class="dot" onclick="currentSlide(8)"></span>
+    </div>
+    </section>
+
+    <section id="best_sellers" class="best-sellers">
+
+    </section>
+
+    <section id="shopping_cart">
+        <h1>SHOPPING CART</h1>
+        <div class="cart-container">
+            <button id="remove-all" class="remove invisible" onclick="funcRemoveAll()">Remove all</button>
+            <div class="cart-infos">               
+                <div class="owo">
+                    <h2 id="no-item">No item in the cart OwO</h2>
+                </div>
+                
+            </div>
+            
+        </div>
+
+    </section>
+
+    <section id="newsletter">
+        <div class="newsletter">
+            <h1>NEWSLETTER</h1>
+            <p>Sign up to our newsletter for game news, discounts and exclusive offers.</p>
+            <span>You can unsubscribe any time through our emails.</span>
+            <div class="newsletter-container">
+                <input type="text" placeholder="Email...">
+                <button type="submit">Subscribe Now</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+
+        <img src="assets/logo.png" alt="">
+
+        <ul class="footer-nav">
+            <li>
+                <a href="">Abous Us</a>
+            </li>
+            <span>•</span>
+            <li>
+                <a href="">Terms and Conditions</a>
+            </li>
+            <span>•</span>
+            <li>
+                <a href="">Privacy Policy</a>
+            </li>
+            <span>•</span>
+            <li>
+                <a href="">Transaction Services Agreement</a>
+            </li>
+            <span>•</span>
+            <li>
+                <a href="">Customer Support</a>
+            </li>
+        </ul>
+
+        <div class="community">
+            <p>Join our community</p>
+            <div>
+                <i class='bx bxl-facebook-circle' ></i>
+                <i class='bx bxl-twitter' ></i>
+                <i class='bx bxl-instagram-alt' ></i>
+                <i class='bx bxl-youtube' ></i>
+                <i class='bx bxl-discord-alt' ></i>
+            </div>
+        </div>
+
+        <div class="footer-text">
+            <p>© 2023 OwO Store. All Rights Reserved</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, rerum! Ipsam, corrupti? Dolore, fuga provident! Labore ut voluptas nulla officiis corporis deserunt!</p>
+        </div>
+        
+    </footer>
+   
+    <script src="./js/script.js"></script>
+    <script src="https://kit.fontawesome.com/5973848f33.js" crossorigin="anonymous"></script>
+</body>
+</html>
